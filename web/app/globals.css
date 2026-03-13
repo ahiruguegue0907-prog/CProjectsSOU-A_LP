@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F6FAF9;
+  --foreground: #44506A;
+  --bg-sub: #EEF6F4;
+  --heading: #0F1B3D;
+  --body: #44506A;
+  --primary: #11A39A;
+  --primary-dark: #0E8B84;
+  --accent-purple: #EDE7FA;
+  --accent-blue: #EAF2FF;
+  --border-card: #DCE8E5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bg-sub: var(--bg-sub);
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-blue: var(--accent-blue);
+  --color-border-card: var(--border-card);
+  --font-sans: "Noto Sans JP", sans-serif;
+}
+
+/* Grid background pattern for hero */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(17, 163, 154, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 163, 154, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* FAQ accordion */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-chevron {
+  transition: transform 0.3s ease;
+}
